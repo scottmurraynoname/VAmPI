@@ -42,7 +42,7 @@ jobs:
         run: |
           docker run \
           --pull always \
-          jfrog.cicd.nonamesec.com/noname-docker-release/active-cli:$(curl -k ${{env.ACTIVE_API_URL}}/backend/version) \
+          jfrog.cicd.nonamesec.com/noname-docker-release/active-cli:2.0.0 \
           scan \
           --api-url=${{ env.ACTIVE_BASE_URL }} \
           --api-token=${{ secrets.ACTIVE_API_TOKEN }} \
