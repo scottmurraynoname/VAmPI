@@ -56,4 +56,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echo
-        run: echo Hello world ${{ env.ACTIVE_BASE_URL }}
+        run: echo Hello World ${{ env.ACTIVE_BASE_URL }}
