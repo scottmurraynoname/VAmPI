@@ -7,8 +7,8 @@ on:
 env:
   ACTIVE_API_URL: https://noname.local/active
   ACTIVE_SEVERITY_THRESHOLD: medium
-  ACTIVE_TEST_SUITE_ID: <your-test-suite-id>
-  ACTIVE_BASE_URL: '' # empty by default use the source URL
+  ACTIVE_TEST_SUITE_ID: f9caf5be-c832-4341-8cac-4b6672432048
+  ACTIVE_BASE_URL: 'http://localhost:5002/' # empty by default use the source URL
 
 jobs:
   build:
@@ -41,6 +41,7 @@ jobs:
       - name: security test
         run: |
           docker run \
+          -e ACTIVE_CONFIG_FILE_PATH=/noname/config.json
           --pull always \
           jfrog.cicd.nonamesec.com/noname-docker-release/active-cli:2.0.0 \
           scan \
