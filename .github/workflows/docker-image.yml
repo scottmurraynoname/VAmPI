@@ -35,7 +35,7 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: jfrog.cicd.nonamesec.com/noname-docker-release
-          username: <active-testing-username>
+          username: ${{ secrets.ACTIVE_REGISTRY_USER }}
           password: ${{ secrets.ACTIVE_REGISTRY_PASSWORD }}
 
       - name: security test
