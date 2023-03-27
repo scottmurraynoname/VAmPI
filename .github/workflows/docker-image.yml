@@ -48,7 +48,7 @@ jobs:
           --api-url=${{ env.ACTIVE_BASE_URL }} \
           --api-token=${{ secrets.ACTIVE_API_TOKEN }} \
           --severity-threshold=medium \
-          --base-url=${{ env.ACTIVE_SCAN_TARGET_BASE_URL }} \
+          --base-url=http://localhost:5002 \
           --branch-name=master \
           --log-level=debug
 
