@@ -50,6 +50,7 @@ jobs:
           --test-suite-id=${{ env.ACTIVE_TEST_SUITE_ID }} \
           --severity-threshold=medium \
           --base-url=${{ env.ACTIVE_SCAN_TARGET_BASE_URL }}
+          --branch-name=master
 
   deploy:
     needs: scan
