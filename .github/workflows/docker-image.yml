@@ -5,12 +5,16 @@ on:
     branches: [ "master" ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    - name: Checkout 
+      uses: actions/checkout@v3
+
+    - name: Run VAmPI
+      run: docker compose up -d
+
+    - name: Test VAmPI
+      run sleep 5 && curl http://localhost:5002/ --retry 10 --retry-delay 1
+      
