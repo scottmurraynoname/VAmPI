@@ -41,7 +41,7 @@ jobs:
       - name: security test
         run: |
           docker run \
-          -e ACTIVE_CONFIG_FILE_PATH=/noname/config.json
+          -e ACTIVE_CONFIG_FILE_PATH=/noname/config.json \
           --pull always \
           jfrog.cicd.nonamesec.com/noname-docker-release/active-cli:2.0.0 \
           scan \
