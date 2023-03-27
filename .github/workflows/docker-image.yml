@@ -4,6 +4,12 @@ on:
   push:
     branches: [ "master" ]
 
+env:
+  ACTIVE_API_URL: https://noname.local/active
+  ACTIVE_SEVERITY_THRESHOLD: medium
+  ACTIVE_TEST_SUITE_ID: <your-test-suite-id>
+  ACTIVE_BASE_URL: '' # empty by default use the source URL
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,16 +24,6 @@ jobs:
     - name: Test VAmPI
       run: sleep 5 && curl http://localhost:5002/ --retry 10 --retry-delay 1
 
-on:
-  push:
-    branches: [ "master" ]
-    
-env:
-  ACTIVE_API_URL: <active-testing-url>
-  ACTIVE_SEVERITY_THRESHOLD: medium
-  ACTIVE_TEST_SUITE_ID: <your-test-suite-id>
-  ACTIVE_BASE_URL: '' # empty by default use the source URL
-jobs:
   scan:
     runs-on: ubuntu-latest
 
@@ -60,4 +56,3 @@ jobs:
     steps:
       - name: echo
         run: echo Hello world ${{ env.ACTIVE_BASE_URL }}
-
