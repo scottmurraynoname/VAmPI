@@ -49,7 +49,7 @@ jobs:
           --api-token=${{ secrets.ACTIVE_API_TOKEN }} \
           --severity-threshold=medium \
           --branch-name=master \
-          --log-level=debug
+          --log-level=silly
 
   deploy:
     needs: scan
