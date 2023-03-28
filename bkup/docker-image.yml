@@ -41,15 +41,13 @@ jobs:
       - name: security test
         run: |
           docker run \
-          --add-host=host.docker.internal:host-gateway \
           -e ACTIVE_CONFIG_FILE_PATH=/noname/config.json \
-          -v $(pwd)/noname:/noname \
-          -v $(pwd)/openapi_specs:/openapi_specs \
-          jfrog.cicd.nonamesec.com/noname-docker-release/active-cli:2.0.0 scan \
-          --api-url=${{ env.ACTIVE_API_URL }} \
+          --pull always \
+          jfrog.cicd.nonamesec.com/noname-docker-release/active-cli:2.0.0 \
+          scan \
+          --api-url=${{ env.ACTIVE_BASE_URL }} \
           --api-token=${{ secrets.ACTIVE_API_TOKEN }} \
-          --test-group-id=a \
-          --severity-threshold=none \
+          --severity-threshold=medium \
           --branch-name=master \
           --log-level=silly
 
