@@ -52,8 +52,7 @@ jobs:
           --branch-name=master \
           --log-level=debug \
           --api-url=https://noname.lab/active \
-          --test-suite-id=${{ env.ACTIVE_TEST_SUITE_ID }} \
-          --base-url=${{ env.ACTIVE_BASE_URL }}
+          --test-group-id=${{ env.ACTIVE_TEST_SUITE_ID }}
 
   deploy:
     needs: scan
