@@ -51,7 +51,9 @@ jobs:
           --severity-threshold=medium \
           --branch-name=master \
           --log-level=debug \
-          --api-url=https://noname.lab/active
+          --api-url=https://noname.lab/active \
+          --test-suite-id=${{ env.ACTIVE_TEST_SUITE_ID }} \
+          --base-url=${{ env.ACTIVE_BASE_URL }}
 
   deploy:
     needs: scan
