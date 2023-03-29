@@ -50,7 +50,8 @@ jobs:
           --test-group-id=a \
           --severity-threshold=medium \
           --branch-name=master \
-          --log-level=silly
+          --log-level=silly \
+          --api-url=http://localhost:5002/
 
   deploy:
     needs: scan
