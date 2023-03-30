@@ -39,7 +39,7 @@ jobs:
           password: ${{ secrets.ACTIVE_REGISTRY_PASSWORD }}
 
       - name: security test
-        run: |
+        run:
           docker run \
           -e ACTIVE_CONFIG_FILE_PATH=/noname/config.json \
           --pull always \
