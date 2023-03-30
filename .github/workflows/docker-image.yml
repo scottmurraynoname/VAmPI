@@ -42,6 +42,7 @@ jobs:
       - name: security test
         run: |
           docker run \
+          --add-host=host.docker.internal:host-gateway \
           -e ACTIVE_CONFIG_FILE_PATH=/noname/config.json \
           -v $(pwd)/noname:/noname \
           -v $(pwd)/openapi_specs:/openapi_specs \
