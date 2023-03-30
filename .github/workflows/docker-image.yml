@@ -8,7 +8,7 @@ env:
   ACTIVE_API_URL: https://noname.lab/active
   ACTIVE_SEVERITY_THRESHOLD: medium
   ACTIVE_TEST_SUITE_ID: f9caf5be-c832-4341-8cac-4b6672432048
-  ACTIVE_BASE_URL: 'http://localhost:5002/' # empty by default use the source URL
+  ACTIVE_BASE_URL: 'http://192.168.38.234:5002/' # empty by default use the source URL
 
 jobs:
   build:
@@ -22,7 +22,7 @@ jobs:
       run: docker compose up -d
 
     - name: Test VAmPI
-      run: sleep 5 && curl http://localhost:5002/ --retry 10 --retry-delay 1
+      run: sleep 5 && curl http://192.168.38.234:5002/ --retry 10 --retry-delay 1
 
   scan:
     runs-on: self-hosted
