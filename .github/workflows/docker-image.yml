@@ -7,7 +7,7 @@ on:
 env:
   ACTIVE_API_URL: https://noname.lab/active
   ACTIVE_SEVERITY_THRESHOLD: medium
-  ACTIVE_TEST_SUITE_ID: "Vampi GH"
+  ACTIVE_TEST_SUITE_ID: "vampi"
   ACTIVE_BASE_URL: 'http://192.168.38.234:5002/' # empty by default use the source URL
 
 jobs:
